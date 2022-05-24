@@ -104,5 +104,10 @@ class GAME:
 		sys.exit()
 
 
-GameWin = GAME()
-GameWin.mainloop()
+def main():
+	game_win = GAME()
+	game_win.mainloop()
+
+
+if __name__ == "__main__":
+	main()
