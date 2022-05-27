@@ -11,6 +11,10 @@ YELLOW = (255, 255, 0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 
+# Debug
+DEBUG = False
+
+
 # Coordinate Setup
 SIZE = 1536, 864
 SCR_WIDTH, SCR_HEIGHT = SIZE
@@ -24,4 +28,10 @@ FPS = 120
 THRUST = 1_500
 MASS = 2
 ANGULAR_VEL = 360  # in degrees per second
-BRAKES = .98  # reduction in velocity every frame to this amount
+BRAKES = .95  # reduction in velocity every frame to this amount
+
+# Asteroid Default Settings
+AS_SIZE = 20
+AS_MASS = 50
+AS_THRUST = 20000
+

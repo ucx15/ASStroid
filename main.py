@@ -4,6 +4,8 @@ import pygame
 from settings import *
 from level import Level
 from pages import FirstPage
+from UI import Text
+
 
 pygame.init()
 
@@ -19,9 +21,10 @@ class GAME:
 		# Fonts
 		self.font_title = pygame.font.SysFont("Consolas", 100)
 		self.font_plain = pygame.font.SysFont("consolas", 30)
-		self.font_debug = pygame.font.SysFont("consolas", 15)
+		self.font_debug = pygame.font.SysFont("consolas", 20)
 
 		self.first_page = FirstPage(self.font_title, self.font_plain)
+		self.fps_text = Text("FPS: ", YELLOW, self.font_debug, (0, 0))
 
 	def mainloop(self):
 		# Game_Setup
@@ -32,9 +35,11 @@ class GAME:
 		frame_time = 0
 
 		world = Level()
+		world.generate_obstacles()
 
 		# Game_Loop
 		while runloop:
+
 			# Time_Management
 			frame_time = pfc() - frame_time
 			delta_time = frame_time
@@ -65,7 +70,9 @@ class GAME:
 			# Main_Game
 			if not run_fp and started:
 				world.update(delta_time, keys)
-				world.show(self.surface, debug=False)
+				world.show(self.surface, debug=DEBUG)
+				self.fps_text.text = f"FPS: {round(self.clock.get_fps())}"
+				self.fps_text.render(self.surface, 1)
 			self.display.update()
 
 		pygame.quit()
