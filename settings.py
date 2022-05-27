@@ -12,7 +12,7 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 
 # Coordinate Setup
-SIZE = (1280, 720)
+SIZE = 1536, 864
 SCR_WIDTH, SCR_HEIGHT = SIZE
 CENTER = (SCR_WIDTH // 2, SCR_HEIGHT // 2)
 OX, OY = CENTER

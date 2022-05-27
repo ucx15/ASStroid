@@ -3,6 +3,9 @@ from settings import *
 
 
 class DefaultShip:
+	w = round(4.5 / 100 * SCR_WIDTH)
+	h = round(2.25 * w)
+
 	def __init__(self, pos, img):
 		# Location
 		self.pos = pos
@@ -105,5 +108,5 @@ class DefaultShip:
 
 class UcxI(DefaultShip):
 	def __init__(self, pos):
-		img = pygame.transform.scale(pygame.image.load("Assets/SpaceShip.png").convert_alpha(), (60, 135))
+		img = pygame.transform.scale(pygame.image.load("Assets/SpaceShip.png").convert_alpha(), (self.w, self.h))
 		super().__init__(pos, img)

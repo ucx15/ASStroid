@@ -12,7 +12,7 @@ class GAME:
 	def __init__(self):
 		# Pygame_Variables_Setup
 		self.display = pygame.display
-		self.surface = pygame.display.set_mode(SIZE)
+		self.surface = pygame.display.set_mode((SCR_WIDTH, SCR_HEIGHT), pygame.NOFRAME, vsync=1)
 		self.display.set_caption("ASStroid")
 		self.clock = pygame.time.Clock()
 
