@@ -25,9 +25,10 @@ class DefaultShip:
 		self.img = img
 		self.img_dynamic = img
 		self.rect = self.img_dynamic.get_rect()
+		self.sx, self.sy = self.size() / 2
 
 	def size(self):
-		return Vec(self.img_dynamic.get_size())
+		return Vec(self.img_dynamic.get_size()) / 2
 
 	def retard(self, amt=.95):
 		self.vel *= amt
@@ -63,28 +64,8 @@ class DefaultShip:
 			self.vel.update()
 			self.angle = 0
 
-	def edges(self):
-		sx, sy = self.size() / 2
-		if self.pos.x < sx:
-			self.pos.x = sx
-			self.vel.x *= -1
-			self.retard()
-		elif self.pos.x > (SCR_WIDTH - sx):
-			self.pos.x = SCR_WIDTH - sx
-			self.vel.x *= -1
-			self.retard()
-		if self.pos.y < sy:
-			self.pos.y = sy
-			self.vel.y *= -1
-			self.retard()
-		elif self.pos.y > (SCR_HEIGHT - sy):
-			self.pos.y = SCR_HEIGHT - sy
-			self.vel.y *= -1
-			self.retard()
-
 	def update(self, keys, dt):
 		self.motion(dt, keys)
-		self.edges()
 		self.vel += self.acc * dt
 		self.pos += self.vel * dt
 		self.acc.update()

@@ -35,7 +35,6 @@ class GAME:
 		frame_time = 0
 
 		world = Level()
-		world.generate_obstacles()
 
 		# Game_Loop
 		while runloop:
