@@ -8,7 +8,7 @@ A different asteroid mining game made in pygame.
 
 ## Controls-
 * ```W``` - Acceleration
-* ```S``` - Declaration
+* ```S``` - Deceleration
 * ```A``` - Rotate Left
 * ```D``` - Rotate Right
 * ```SPACE``` - Stop Motion
